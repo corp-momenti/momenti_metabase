@@ -1,5 +1,13 @@
 {
-    "name" : "Ubuntu",
-    "image" : "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
-    "remoteUser": "vscode"
+    "name" : "momenti-metabase",
+    "dockerComposeFile": ["docker-compose.yml"],
+    "workspaceFolder": "/home/vscode/workspace",
+    "service": "ubuntu",
+    // "features": {
+    //     "ghcr.io/devcontainers/features/docker-in-docker:2": {
+    //         "version": "2.1.0"
+    //     }
+    // },
+    "remoteUser": "vscode",
+    "shutdownAction": "stopCompose"
 }
