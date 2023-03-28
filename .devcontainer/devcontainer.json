@@ -4,5 +4,6 @@
     "workspaceFolder": "/home/vscode/workspace",
     "service": "ubuntu",
     "remoteUser": "vscode",
-    "shutdownAction": "stopCompose"
+    "shutdownAction": "stopCompose",
+    "forwardPorts": [53685, 53686 , 53687, 53688]
 }

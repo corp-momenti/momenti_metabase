@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:  
+  metabase_base1:
+    image: metabase/metabase:latest
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: metabase
+      MB_DB_PORT: 5432
+      MB_DB_USER: postgres
+      MB_DB_PASS: postgres
+      MB_DB_HOST: postgres1
+    ports:
+      - 53685:3000
+
+  metabase_base2:
+    image: metabase/metabase:latest
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: metabase
+      MB_DB_PORT: 5432
+      MB_DB_USER: postgres
+      MB_DB_PASS: postgres
+      MB_DB_HOST: postgres2
+    ports:
+      - 53686:3000
+
+  postgres1:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: metabase
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - 53687:5432
+
+  postgres2:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: metabase
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - 53688:5432
